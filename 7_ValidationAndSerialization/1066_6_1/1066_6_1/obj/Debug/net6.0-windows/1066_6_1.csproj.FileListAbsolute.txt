@@ -1,0 +1,17 @@
+C:\Users\erik\source\repos\1066_6_1\1066_6_1\bin\Debug\net6.0-windows\1066_6_1.exe
+C:\Users\erik\source\repos\1066_6_1\1066_6_1\bin\Debug\net6.0-windows\1066_6_1.deps.json
+C:\Users\erik\source\repos\1066_6_1\1066_6_1\bin\Debug\net6.0-windows\1066_6_1.runtimeconfig.json
+C:\Users\erik\source\repos\1066_6_1\1066_6_1\bin\Debug\net6.0-windows\1066_6_1.dll
+C:\Users\erik\source\repos\1066_6_1\1066_6_1\bin\Debug\net6.0-windows\1066_6_1.pdb
+C:\Users\erik\source\repos\1066_6_1\1066_6_1\obj\Debug\net6.0-windows\1066_6_1.csproj.AssemblyReference.cache
+C:\Users\erik\source\repos\1066_6_1\1066_6_1\obj\Debug\net6.0-windows\_1066_6_1.Form1.resources
+C:\Users\erik\source\repos\1066_6_1\1066_6_1\obj\Debug\net6.0-windows\1066_6_1.csproj.GenerateResource.cache
+C:\Users\erik\source\repos\1066_6_1\1066_6_1\obj\Debug\net6.0-windows\1066_6_1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erik\source\repos\1066_6_1\1066_6_1\obj\Debug\net6.0-windows\1066_6_1.AssemblyInfoInputs.cache
+C:\Users\erik\source\repos\1066_6_1\1066_6_1\obj\Debug\net6.0-windows\1066_6_1.AssemblyInfo.cs
+C:\Users\erik\source\repos\1066_6_1\1066_6_1\obj\Debug\net6.0-windows\1066_6_1.csproj.CoreCompileInputs.cache
+C:\Users\erik\source\repos\1066_6_1\1066_6_1\obj\Debug\net6.0-windows\1066_6_1.dll
+C:\Users\erik\source\repos\1066_6_1\1066_6_1\obj\Debug\net6.0-windows\refint\1066_6_1.dll
+C:\Users\erik\source\repos\1066_6_1\1066_6_1\obj\Debug\net6.0-windows\1066_6_1.pdb
+C:\Users\erik\source\repos\1066_6_1\1066_6_1\obj\Debug\net6.0-windows\1066_6_1.genruntimeconfig.cache
+C:\Users\erik\source\repos\1066_6_1\1066_6_1\obj\Debug\net6.0-windows\ref\1066_6_1.dll
