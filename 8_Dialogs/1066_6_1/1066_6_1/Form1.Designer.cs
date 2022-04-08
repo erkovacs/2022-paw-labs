@@ -44,6 +44,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.formValidationErrrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.button2 = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.formValidationErrrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,13 +162,13 @@
             // 
             this.myConsole.BackColor = System.Drawing.SystemColors.MenuText;
             this.myConsole.ForeColor = System.Drawing.Color.Lime;
-            this.myConsole.Location = new System.Drawing.Point(26, 240);
+            this.myConsole.Location = new System.Drawing.Point(26, 461);
             this.myConsole.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.myConsole.Multiline = true;
             this.myConsole.Name = "myConsole";
             this.myConsole.ReadOnly = true;
             this.myConsole.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.myConsole.Size = new System.Drawing.Size(740, 259);
+            this.myConsole.Size = new System.Drawing.Size(740, 65);
             this.myConsole.TabIndex = 11;
             this.myConsole.TextChanged += new System.EventHandler(this.myConsole_TextChanged);
             // 
@@ -196,11 +197,21 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(26, 237);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(734, 209);
+            this.listView1.TabIndex = 14;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(815, 537);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.myConsole);
@@ -241,5 +252,6 @@
         private Button button1;
         private ErrorProvider formValidationErrrorProvider;
         private Button button2;
+        private ListView listView1;
     }
 }

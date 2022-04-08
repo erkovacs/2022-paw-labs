@@ -4,48 +4,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _1066_6_1.Entities
+namespace WindowsFormsApp1.Entities
 {
-    public enum Gender
+    enum Gender
     {
-        None,
+        NA,
         Male,
         Female
     }
 
     [Serializable]
-    public class Person
+    class Person
     {
+        #region Props
+
         private string _lastName;
         public string LastName 
         {
-            get { return _lastName; }
-
-            set 
-            {
+            get {
+                return _lastName;
+            }
+            set {
+                if(string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("Last name cannot be null or empty.");
+                }
                 _lastName = value;
             }
         }
+
         public string FirstName { get; set; }
+
         public string Ssn { get; set; }
 
         public DateTime BirthDate { get; set; }
 
         public Gender Gender { get; set; }
+        #endregion
 
-        public Person()
+        public Person(string lastName, string firstName, string ssn, DateTime birthDate, Gender gender)
         {
-            LastName = "N/A";
-            FirstName = "N/A";
-            Ssn = "N/A";
-            Gender = Gender.Male;
-            BirthDate = DateTime.Now;
-        }
-
-        public Person(string lastName, string firstName, string ssn,
-            DateTime birthDate, Gender gender)
-        {
-            LastName = lastName;
+            LastName = lastName; // java style: this.setLastName(lastName)
             FirstName = firstName;
             Ssn = ssn;
             BirthDate = birthDate;
@@ -54,7 +53,8 @@ namespace _1066_6_1.Entities
 
         public override string ToString()
         {
-            return $"{LastName} {FirstName}, {Ssn}, {BirthDate.ToString()}, {Gender}";
+            return $"{LastName} {FirstName}, {Ssn}, {BirthDate}, {Gender.ToString()}";
         }
+
     }
 }

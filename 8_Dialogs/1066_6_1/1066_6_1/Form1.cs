@@ -16,11 +16,11 @@ namespace _1066_6_1
 
         public void ListPersons()
         {
-            myConsole.Text = "";
-
+            listView1.Items.Clear();
             foreach (var person in persons)
             {
-                myConsole.Text += person.ToString() + Environment.NewLine;
+                var itm = new ListViewItem(person.ToString());
+                listView1.Items.Add(itm);
             }
         }
 
@@ -52,7 +52,14 @@ namespace _1066_6_1
         private void button1_Click(object sender, EventArgs e)
         {
             Gender gender = Gender.None;
-            gender = male.Checked && (!female.Checked) ? Gender.Male : Gender.Female;
+            if (male.Checked)
+            {
+                gender = Gender.Male;
+            }
+            if (female.Checked)
+            {
+                gender = Gender.Female;
+            }
 
             var person = new Person(lastName.Text, firstName.Text, ssn.Text,
                 birthDate.Value, gender);
@@ -178,7 +185,11 @@ namespace _1066_6_1
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            var person = ((ListView)sender).SelectedItems[0];
+            MessageBox.Show(person.ToString(),
+                    "Person",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
         }
 
         private void myConsole_TextChanged(object sender, EventArgs e)
