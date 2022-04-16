@@ -14,7 +14,7 @@ namespace _1066_6_1.Entities
     }
 
     [Serializable]
-    public class Person
+    public class Person : IComparable<Person>
     {
         private string _lastName;
         public string LastName 
@@ -35,11 +35,6 @@ namespace _1066_6_1.Entities
 
         public Person()
         {
-            LastName = "N/A";
-            FirstName = "N/A";
-            Ssn = "N/A";
-            Gender = Gender.Male;
-            BirthDate = DateTime.Now;
         }
 
         public Person(string lastName, string firstName, string ssn,
@@ -55,6 +50,11 @@ namespace _1066_6_1.Entities
         public override string ToString()
         {
             return $"{LastName} {FirstName}, {Ssn}, {BirthDate.ToString()}, {Gender}";
+        }
+
+        public int CompareTo(Person? other)
+        {
+            return Ssn.CompareTo(other.Ssn);
         }
     }
 }

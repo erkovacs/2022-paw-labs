@@ -16,11 +16,14 @@ namespace _1066_6_1
 
         public void ListPersons()
         {
-            listView1.Items.Clear();
+            persons.Sort();
+
+            dgvPersons.Rows.Clear();
+
             foreach (var person in persons)
             {
-                var itm = new ListViewItem(person.ToString());
-                listView1.Items.Add(itm);
+                int id = dgvPersons.Rows.Add(new object[] { person.Ssn, person.LastName, person.FirstName });
+                dgvPersons.Rows[id].Tag = person;
             }
         }
 
@@ -195,6 +198,44 @@ namespace _1066_6_1
         private void myConsole_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            bool isNewPerson = false;
+            Person person;
+
+            if (dgvPersons.SelectedRows.Count == 0)
+            {
+                isNewPerson = true;
+                person = new Person();
+            }
+            else
+            { 
+                person = dgvPersons.SelectedRows[0].Tag as Person;
+            }
+
+            EditForm dialog = new EditForm(person);
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                if (isNewPerson) persons.Add(person);
+                ListPersons();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (
+                MessageBox.Show(
+                    "Are you sure you want to delete the person?",
+                    "Confirm delete",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                var person = dgvPersons.SelectedRows[0].Tag as Person;
+                persons.Remove(person);
+                ListPersons();
+            }
         }
     }
 }

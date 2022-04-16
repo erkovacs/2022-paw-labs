@@ -44,8 +44,18 @@
             this.button1 = new System.Windows.Forms.Button();
             this.formValidationErrrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.button2 = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.serializeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deserializeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvPersons = new System.Windows.Forms.DataGridView();
+            this.ssnCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.formValidationErrrorProvider)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPersons)).BeginInit();
             this.SuspendLayout();
             // 
             // firstName
@@ -197,21 +207,93 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // listView1
+            // menuStrip1
             // 
-            this.listView1.Location = new System.Drawing.Point(26, 237);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(734, 209);
-            this.listView1.TabIndex = 14;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.serializeToolStripMenuItem,
+            this.deserializeToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(815, 28);
+            this.menuStrip1.TabIndex = 15;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // serializeToolStripMenuItem
+            // 
+            this.serializeToolStripMenuItem.Name = "serializeToolStripMenuItem";
+            this.serializeToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
+            this.serializeToolStripMenuItem.Text = "Serialize";
+            // 
+            // deserializeToolStripMenuItem
+            // 
+            this.deserializeToolStripMenuItem.Name = "deserializeToolStripMenuItem";
+            this.deserializeToolStripMenuItem.Size = new System.Drawing.Size(96, 24);
+            this.deserializeToolStripMenuItem.Text = "Deserialize";
+            // 
+            // dgvPersons
+            // 
+            this.dgvPersons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPersons.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ssnCol,
+            this.lastNameCol,
+            this.firstNameCol});
+            this.dgvPersons.Location = new System.Drawing.Point(26, 231);
+            this.dgvPersons.Name = "dgvPersons";
+            this.dgvPersons.RowHeadersWidth = 51;
+            this.dgvPersons.RowTemplate.Height = 29;
+            this.dgvPersons.Size = new System.Drawing.Size(740, 188);
+            this.dgvPersons.TabIndex = 16;
+            // 
+            // ssnCol
+            // 
+            this.ssnCol.HeaderText = "SSN";
+            this.ssnCol.MinimumWidth = 6;
+            this.ssnCol.Name = "ssnCol";
+            this.ssnCol.Width = 125;
+            // 
+            // lastNameCol
+            // 
+            this.lastNameCol.HeaderText = "Last name";
+            this.lastNameCol.MinimumWidth = 6;
+            this.lastNameCol.Name = "lastNameCol";
+            this.lastNameCol.Width = 125;
+            // 
+            // firstNameCol
+            // 
+            this.firstNameCol.HeaderText = "First name";
+            this.firstNameCol.MinimumWidth = 6;
+            this.firstNameCol.Name = "firstNameCol";
+            this.firstNameCol.Width = 125;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(672, 427);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(94, 29);
+            this.btnEdit.TabIndex = 17;
+            this.btnEdit.Text = "Add/Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(563, 425);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(94, 29);
+            this.btnDelete.TabIndex = 18;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(815, 537);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.dgvPersons);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.myConsole);
@@ -226,10 +308,15 @@
             this.Controls.Add(this.ssn);
             this.Controls.Add(this.lastName);
             this.Controls.Add(this.firstName);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.formValidationErrrorProvider)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPersons)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,6 +339,14 @@
         private Button button1;
         private ErrorProvider formValidationErrrorProvider;
         private Button button2;
-        private ListView listView1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem serializeToolStripMenuItem;
+        private ToolStripMenuItem deserializeToolStripMenuItem;
+        private DataGridView dgvPersons;
+        private DataGridViewTextBoxColumn ssnCol;
+        private DataGridViewTextBoxColumn lastNameCol;
+        private DataGridViewTextBoxColumn firstNameCol;
+        private Button btnEdit;
+        private Button btnDelete;
     }
 }
